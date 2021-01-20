@@ -9,7 +9,7 @@ import { Component, Emit, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class PrimaryButton extends Vue {
-  @Prop({ default: "button" }) private type?: string;
+  @Prop({ default: "button" }) private readonly type?: string;
 
   @Emit()
   onClick(event: Event) {
