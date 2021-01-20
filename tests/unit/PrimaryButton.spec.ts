@@ -41,8 +41,8 @@ describe("PrimaryButton.vue", () => {
   it("emits a onClick event", () => {
     const { wrapper } = build();
 
-    wrapper.trigger("onClick");
+    wrapper.trigger("click");
 
-    expect(wrapper.emitted("onClick")).toBeTruthy();
+    expect(wrapper.emitted("on-click")).toBeTruthy();
   });
 });
