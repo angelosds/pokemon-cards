@@ -1,0 +1,62 @@
+@import './variables';
+
+:root {
+    --primary-color-values: 39, 67, 94;
+    --secondary-color-values: 233, 236, 239;
+    
+    --background-color-values: 255, 255, 255;
+    --header-background-color-values: var(--secondary-color-values);
+
+    --text-color-inverse-values: 255, 255, 255;
+    --text-color-values: var(--primary-color-values);
+
+    --type-bug-color-values: 183, 217, 111;
+    --type-dark-color-values: 55, 55, 55;
+    --type-dragon-color-values: 145, 111, 217;
+    --type-electric-color-values: 243, 207, 105;
+    --type-fairy-color-values: 201, 68, 124;
+    --type-fighting-color-values: 174, 117, 85;
+    --type-fire-color-values: 217, 113, 114;
+    --type-flying-color-values: 117, 115, 237;
+    --type-ghost-color-values: 79, 62, 125;
+    --type-grass-color-values: 118, 199, 166;
+    --type-ground-color-values: 216, 181, 112;
+    --type-ice-color-values: 115, 230, 237;
+    --type-normal-color-values: 192, 192, 192;
+    --type-poison-color-values: 113, 77, 134;
+    --type-psychic-color-values: 217, 110, 168;
+    --type-rock-color-values: 167, 109, 109;
+    --type-steel-color-values: 104, 104, 104;
+    --type-water-color-values: 115, 173, 237;
+
+    --card-type-colorless-color-values: var(--type-normal-color-values);
+    --card-type-darkness-color-values: var(--type-dark-color-values);
+    --card-type-dragon-color-values: var(--type-dragon-color-values);
+    --card-type-fairy-color-values: var(--type-fairy-color-values);
+    --card-type-fighting-color-values: var(--type-fighting-color-values);
+    --card-type-fire-color-values: var(--type-fire-color-values);
+    --card-type-grass-color-values: var(--type-grass-color-values);
+    --card-type-lightning-color-values: var(--type-electric-color-values);
+    --card-type-metal-color-values: var(--type-steel-color-values);
+    --card-type-psychic-color-values: var(--type-psychic-color-values);
+    --card-type-water-color-values: var(--type-water-color-values);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $font-family-roboto;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
