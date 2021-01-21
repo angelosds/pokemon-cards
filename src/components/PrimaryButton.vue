@@ -24,10 +24,9 @@ export default class PrimaryButton extends Vue {
   border-radius: 8px;
   border: 0;
   color: $text-color-inverse;
-  font-size: 2rem;
   font-weight: 700;
   outline: 0;
-  padding: 16px 24px;
+  padding: 12px 24px;
 
   &:hover,
   &:focus {

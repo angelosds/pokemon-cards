@@ -50,11 +50,11 @@ export default class Card extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$card-padding: 24px;
+$card-padding: 16px;
 
 .card {
   border-radius: 16px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -64,13 +64,15 @@ $card-padding: 24px;
   }
 
   &__container {
+    display: flex;
+    justify-content: center;
     padding: $card-padding;
   }
 
   &__description {
     background-color: $secondary-color;
     display: grid;
-    grid-gap: 16px;
+    grid-gap: 8px;
     grid-template-columns: 1fr 40px;
     grid-template-areas:
       "name number"
@@ -81,7 +83,9 @@ $card-padding: 24px;
 
   &__image {
     border-radius: 8px;
-    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    width: 240px;
   }
 
   &__item {
@@ -97,13 +101,13 @@ $card-padding: 24px;
   }
 
   &__name {
-    font-size: 2.4rem;
+    font-size: 2rem;
     grid-area: name;
     margin: 0;
   }
 
   &__number {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
     grid-area: number;
     justify-self: end;

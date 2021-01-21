@@ -25,7 +25,7 @@ export default class Badge extends Vue {
   border-radius: 6px;
   display: inline-flex;
   padding: 6px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: $text-color-inverse;
 
   @each $pokemon-type, $color in $pokemon-types {
