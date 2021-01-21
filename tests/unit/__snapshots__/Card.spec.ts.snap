@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card.vue renders the component 1`] = `
+<article class="card">
+  <!---->
+  <div class="card__description">
+    <h1 class="card__name">Pokémon name</h1> <span class="card__number"></span>
+    <!----> <button type="button" class="primary-button card__button">Details</button>
+  </div>
+</article>
+`;
