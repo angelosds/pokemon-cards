@@ -72,8 +72,10 @@ export default class MainHeader extends Vue {
 <style lang="scss" scoped>
 .main-header {
   background-color: $header-background-color;
-  height: 96px;
-  padding: 32px 16px;
+  height: 80px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
 
   &__button,
   &__close {
@@ -106,6 +108,7 @@ export default class MainHeader extends Vue {
     grid-gap: 16px;
     grid-template-columns: 1fr 40px;
     justify-content: center;
+    width: 100%;
   }
 
   &__icon {
@@ -138,7 +141,7 @@ export default class MainHeader extends Vue {
     grid-template-rows: 40px 1fr;
     height: 100vh;
     left: 0;
-    padding: 32px 16px;
+    padding: 20px 16px;
     position: fixed;
     top: 0;
     width: 100vw;
