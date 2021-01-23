@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
+import { sortCards } from "@/util/cardUtils";
+
 import Card from "@/models/card";
 import store from "@/store";
 
@@ -13,10 +15,6 @@ export interface CardState {
 export default class Cards extends VuexModule implements CardState {
   public cards: Array<Card> = [];
   public loading = false;
-
-  private sortCards(a: Card, b: Card) {
-    return a.name.localeCompare(b.name);
-  }
 
   @Mutation
   private SET_CARDS(cards: Array<Card>) {
@@ -37,7 +35,7 @@ export default class Cards extends VuexModule implements CardState {
         params: { supertype: "Pokémon" }
       });
 
-      this.SET_CARDS(data.cards.sort(this.sortCards));
+      this.SET_CARDS(data.cards.sort(sortCards));
     } finally {
       this.SET_LOADING(false);
     }
@@ -52,7 +50,7 @@ export default class Cards extends VuexModule implements CardState {
         params: { name, supertype: "Pokémon" }
       });
 
-      this.SET_CARDS(data.cards.sort(this.sortCards));
+      this.SET_CARDS(data.cards.sort(sortCards));
     } finally {
       this.SET_LOADING(false);
     }
