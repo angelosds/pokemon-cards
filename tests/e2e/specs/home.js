@@ -31,7 +31,9 @@ describe("Home page", () => {
 
   it("Searchs for Pikachu cards", () => {
     cy.intercept(
-      "https://api.pokemontcg.io/v1/cards?name=Pikachu&supertype=Pok%C3%A9mon",
+      encodeURI(
+        "https://api.pokemontcg.io/v1/cards?name=Pikachu&pageSize=1000&supertype=Pokémon"
+      ),
       {
         fixture: "cards/pikachuList.json"
       }
