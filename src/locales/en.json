@@ -1,5 +1,8 @@
 {
   "appTitle": "Pokémon Cards",
   "searchPlaceholder": "Search cards by Pokémon name",
-  "details": "Details"
+  "details": "Details",
+  "resistance": "Resistance",
+  "weakness": "Weakness",
+  "attacks": "Attacks"
 }

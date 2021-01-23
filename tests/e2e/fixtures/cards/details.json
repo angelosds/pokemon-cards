@@ -1,0 +1,54 @@
+{ 
+  "card": {
+    "id": "base1-47",
+    "name": "Diglett",
+    "nationalPokedexNumber": 50,
+    "imageUrl": "https://images.pokemontcg.io/base1/47.png",
+    "imageUrlHiRes": "https://images.pokemontcg.io/base1/47_hires.png",
+    "types": [
+      "Fighting"
+    ],
+    "supertype": "Pokémon",
+    "subtype": "Basic",
+    "hp": "30",
+    "number": "47",
+    "artist": "Keiji Kinebuchi",
+    "rarity": "Common",
+    "series": "Base",
+    "set": "Base",
+    "setCode": "base1",
+    "attacks": [
+      {
+        "cost": [
+          "Fighting"
+        ],
+        "name": "Dig",
+        "text": "",
+        "damage": "10",
+        "convertedEnergyCost": 1
+      },
+      {
+        "cost": [
+          "Fighting",
+          "Fighting"
+        ],
+        "name": "Mud Slap",
+        "text": "",
+        "damage": "30",
+        "convertedEnergyCost": 2
+      }
+    ],
+    "resistances": [
+      {
+        "type": "Lightning",
+        "value": "-30"
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Grass",
+        "value": "×2"
+      }
+    ]
+  }
+}
