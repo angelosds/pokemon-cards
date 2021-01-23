@@ -1,5 +1,6 @@
 import Attack from "./attack";
 import PokemonType from "@/enums/pokemonType";
+import Resistance from "./resistance";
 import Weakness from "./weakness";
 
 type Card = {
@@ -11,6 +12,7 @@ type Card = {
   number: string;
   attacks: Array<Attack>;
   weaknesses: Array<Weakness>;
+  resistances: Array<Resistance>;
 };
 
 export default Card;
