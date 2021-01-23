@@ -1,5 +1,4 @@
 /// <reference types="Cypress" />
-// https://docs.cypress.io/api/introduction/api.html
 
 describe("Home page", () => {
   it("Visits the app root url", () => {
