@@ -54,7 +54,7 @@ export default class Cards extends VuexModule implements CardState {
 
     try {
       const { data } = await axios.get("cards", {
-        params: { name, supertype: "Pokémon" }
+        params: { name, pageSize: 1000, supertype: "Pokémon" }
       });
 
       this.SET_CARDS(data.cards.sort(sortCards));
