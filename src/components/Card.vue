@@ -73,7 +73,7 @@ $card-padding: 16px;
     background-color: $secondary-color;
     display: grid;
     grid-gap: 8px;
-    grid-template-columns: 1fr 40px;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
       "name number"
       "types types"
@@ -104,6 +104,9 @@ $card-padding: 16px;
     font-size: 2rem;
     grid-area: name;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__number {
