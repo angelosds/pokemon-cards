@@ -1,9 +1,13 @@
 import Vue from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
+
+import i18n from "./i18n";
 import router from "./router";
 import store from "./store";
-import i18n from "./i18n";
+
+import "./axios";
+import "./registerServiceWorker";
+
+import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
