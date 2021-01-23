@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
+
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
@@ -9,6 +10,12 @@ const routes: Array<RouteConfig> = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/card/:id",
+    name: "CardDetails",
+    component: () =>
+      import(/* webpackChunkName: "card-details" */ "../views/CardDetails.vue")
   }
 ];
 

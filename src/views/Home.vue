@@ -9,6 +9,7 @@
         :name="card.name"
         :number="card.number"
         :types="card.types"
+        @on-click="redirectToCardDetailsPage(card.id)"
         class="grid-carousel--item"
       />
     </grid-carousel>
@@ -42,7 +43,18 @@ export default class Home extends Vue {
   }
 
   mounted() {
-    this.cardsModule.fetAllCards();
+    if (this.cards.length === 0) {
+      this.cardsModule.fetAllCards();
+    }
+  }
+
+  private redirectToCardDetailsPage(cardId: number) {
+    this.$router.push({
+      name: "CardDetails",
+      params: {
+        id: cardId.toString()
+      }
+    });
   }
 }
 </script>

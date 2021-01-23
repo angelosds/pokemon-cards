@@ -46,4 +46,13 @@ describe("Home page", () => {
       .find(".card__name")
       .should("contain.text", "Pikachu");
   });
+
+  it("Redirects to a card details page", () => {
+    cy.get(".card")
+      .eq(0)
+      .find(".card__button")
+      .click();
+
+    cy.location("pathname").should("eq", "/card/swshp-SWSH020");
+  });
 });
