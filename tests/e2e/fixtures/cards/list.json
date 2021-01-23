@@ -1,0 +1,520 @@
+{
+  "cards": [
+    {
+      "id": "xy7-10",
+      "name": "Vespiquen",
+      "nationalPokedexNumber": 416,
+      "imageUrl": "https://images.pokemontcg.io/xy7/10.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/xy7/10_hires.png",
+      "types": [
+        "Grass"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Stage 1",
+      "evolvesFrom": "Combee",
+      "hp": "90",
+      "number": "10",
+      "artist": "kawayoo",
+      "rarity": "Uncommon",
+      "series": "XY",
+      "set": "Ancient Origins",
+      "setCode": "xy7",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless"
+          ],
+          "name": "Intelligence Gathering",
+          "text": "You may draw cards until you have 6 cards in your hand.",
+          "damage": "10",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "name": "Bee Revenge",
+          "text": "This attack does 10 more damage for each Pokémon in your discard pile.",
+          "damage": "20+",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "dp6-90",
+      "name": "Cubone",
+      "nationalPokedexNumber": 104,
+      "imageUrl": "https://images.pokemontcg.io/dp6/90.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/dp6/90_hires.png",
+      "types": [
+        "Fighting"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Basic",
+      "hp": "60",
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "number": "90",
+      "artist": "Kagemaru Himeno",
+      "rarity": "Common",
+      "series": "Diamond & Pearl",
+      "set": "Legends Awakened",
+      "setCode": "dp6",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless"
+          ],
+          "name": "Headbutt",
+          "text": "",
+          "damage": "10",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Fighting",
+            "Colorless"
+          ],
+          "name": "Bonemerang",
+          "text": "Flip 2 coins. This attack does 20 damage times the number of heads.",
+          "damage": "20×",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Lightning",
+          "value": "-20"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Water",
+          "value": "+10"
+        }
+      ]
+    },
+    {
+      "id": "base5-60",
+      "name": "Magnemite",
+      "nationalPokedexNumber": 81,
+      "imageUrl": "https://images.pokemontcg.io/base5/60.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/base5/60_hires.png",
+      "types": [
+        "Lightning"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Basic",
+      "hp": "40",
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "number": "60",
+      "artist": "Miki Tanaka",
+      "rarity": "Common",
+      "series": "Base",
+      "set": "Team Rocket",
+      "setCode": "base5",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "name": "Tackle",
+          "text": "",
+          "damage": "20",
+          "convertedEnergyCost": 2
+        },
+        {
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "name": "Magnetism",
+          "text": "Does 10 damage plus 10 more damage for each Magnemite, Magneton, and Dark Magneton on your Bench.",
+          "damage": "10+",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "det1-16",
+      "name": "Lickitung",
+      "nationalPokedexNumber": 108,
+      "imageUrl": "https://images.pokemontcg.io/det1/16.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/det1/16_hires.png",
+      "types": [
+        "Colorless"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Basic",
+      "hp": "100",
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "number": "16",
+      "artist": "MPC Film",
+      "rarity": "Common",
+      "series": "Sun & Moon",
+      "set": "Detective Pikachu",
+      "setCode": "det1",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "name": "Continuous Lick",
+          "text": "Flip a coin until you get tails. This attack does 20 damage for each heads.",
+          "damage": "20×",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "swsh2-2",
+      "name": "Metapod",
+      "nationalPokedexNumber": 11,
+      "imageUrl": "https://images.pokemontcg.io/swsh2/2.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/swsh2/2_hires.png",
+      "types": [
+        "Grass"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Stage 1",
+      "evolvesFrom": "Caterpie",
+      "ability": {
+        "name": "Adaptive Evolution",
+        "text": "This Pokémon can evolve during your first turn or the turn you play it.",
+        "type": "Ability"
+      },
+      "hp": "80",
+      "retreatCost": [
+        "Colorless",
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 3,
+      "number": "2",
+      "artist": "Asako Ito",
+      "rarity": "Uncommon",
+      "series": "Sword & Shield",
+      "set": "Rebel Clash",
+      "setCode": "swsh2",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "name": "Ram",
+          "text": "",
+          "damage": "20",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "swsh35-38",
+      "name": "Absol",
+      "nationalPokedexNumber": 359,
+      "imageUrl": "https://images.pokemontcg.io/swsh35/38.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/swsh35/38_hires.png",
+      "types": [
+        "Darkness"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Basic",
+      "hp": "100",
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "number": "38",
+      "artist": "kodama",
+      "rarity": "Uncommon",
+      "series": "Sword & Shield",
+      "set": "Champion's Path",
+      "setCode": "swsh35",
+      "attacks": [
+        {
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "name": "Dark Cutter",
+          "text": "",
+          "damage": "70",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Grass",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "bw5-36",
+      "name": "Swanna",
+      "nationalPokedexNumber": 581,
+      "imageUrl": "https://images.pokemontcg.io/bw5/36.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/bw5/36_hires.png",
+      "types": [
+        "Water"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Stage 1",
+      "evolvesFrom": "Ducklett",
+      "hp": "90",
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "number": "36",
+      "artist": "Mizue",
+      "rarity": "Rare",
+      "series": "Black & White",
+      "set": "Dark Explorers",
+      "setCode": "bw5",
+      "attacks": [
+        {
+          "cost": [
+            "Water"
+          ],
+          "name": "Healing Pirouette",
+          "text": "Heal 30 damage from each of your Pokémon.",
+          "damage": "",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless"
+          ],
+          "name": "Incessant Peck",
+          "text": "Flip a coin until you get tails. This attack does 20 more damage for each heads.",
+          "damage": "60+",
+          "convertedEnergyCost": 3
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Fighting",
+          "value": "-20"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Lightning",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "bw5-37",
+      "name": "Jolteon",
+      "nationalPokedexNumber": 135,
+      "imageUrl": "https://images.pokemontcg.io/bw5/37.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/bw5/37_hires.png",
+      "types": [
+        "Lightning"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Stage 1",
+      "evolvesFrom": "Eevee",
+      "hp": "90",
+      "convertedRetreatCost": 0,
+      "number": "37",
+      "artist": "Sumiyoshi Kizuki",
+      "rarity": "Uncommon",
+      "series": "Black & White",
+      "set": "Dark Explorers",
+      "setCode": "bw5",
+      "attacks": [
+        {
+          "cost": [
+            "Colorless"
+          ],
+          "name": "Electrigun",
+          "text": "You may discard a Lightning Energy attached to this Pokémon. If you do, this attack does 40 more damage.",
+          "damage": "20+",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Lightning",
+            "Colorless",
+            "Colorless"
+          ],
+          "name": "Pin Missile",
+          "text": "Flip 4 coins. This attack does 40 damage times the number of heads.",
+          "damage": "40×",
+          "convertedEnergyCost": 3
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "xy6-32",
+      "name": "Banette",
+      "nationalPokedexNumber": 354,
+      "imageUrl": "https://images.pokemontcg.io/xy6/32.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/xy6/32_hires.png",
+      "types": [
+        "Psychic"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "Stage 1",
+      "evolvesFrom": "Shuppet",
+      "ancientTrait": {
+        "name": "Δ Evolution",
+        "text": "You may play this card from your hand to evolve a Pokémon during your first turn or the turn you play that Pokémon."
+      },
+      "hp": "90",
+      "retreatCost": [
+        "Colorless"
+      ],
+      "convertedRetreatCost": 1,
+      "number": "32",
+      "artist": "Shin Nagasawa",
+      "rarity": "Rare",
+      "series": "XY",
+      "set": "Roaring Skies",
+      "setCode": "xy6",
+      "attacks": [
+        {
+          "cost": [
+            "Psychic"
+          ],
+          "name": "Evolution Jammer",
+          "text": "Your opponent can't play any Pokémon from his or her hand to evolve his or her Pokémon during his or her next turn.",
+          "damage": "20",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "name": "Curse Deeply",
+          "text": "Put 5 damage counters on your opponent's Active Pokémon.",
+          "damage": "",
+          "convertedEnergyCost": 2
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Fighting",
+          "value": "-20"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Darkness",
+          "value": "×2"
+        }
+      ]
+    },
+    {
+      "id": "bw8-93",
+      "name": "Cobalion-EX",
+      "nationalPokedexNumber": 638,
+      "imageUrl": "https://images.pokemontcg.io/bw8/93.png",
+      "imageUrlHiRes": "https://images.pokemontcg.io/bw8/93_hires.png",
+      "types": [
+        "Metal"
+      ],
+      "supertype": "Pokémon",
+      "subtype": "EX",
+      "hp": "180",
+      "retreatCost": [
+        "Colorless",
+        "Colorless"
+      ],
+      "convertedRetreatCost": 2,
+      "number": "93",
+      "artist": "Eske Yoshinob",
+      "rarity": "Rare Holo EX",
+      "series": "Black & White",
+      "set": "Plasma Storm",
+      "setCode": "bw8",
+      "text": [
+        "When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "cost": [
+            "Metal"
+          ],
+          "name": "Righteous Edge",
+          "text": "Discard a Special Energy attached to the Defending Pokémon.",
+          "damage": "30",
+          "convertedEnergyCost": 1
+        },
+        {
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "name": "Steel Bullet",
+          "text": "This attack's damage isn't affected by Weakness, Resistance, or any other effects on the Defending Pokémon.",
+          "damage": "100",
+          "convertedEnergyCost": 3
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Psychic",
+          "value": "-20"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ]
+    }
+  ]
+}
