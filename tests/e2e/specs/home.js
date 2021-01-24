@@ -1,12 +1,16 @@
 /// <reference types="Cypress" />
 
 describe("Home page", () => {
-  it("Visits the app root url", () => {
+  it("Visits the app root url and shows a loader", () => {
     cy.intercept("https://api.pokemontcg.io/v1/cards?supertype=Pok%C3%A9mon", {
-      fixture: "cards/list.json"
-    });
+      fixture: "cards/list.json",
+      delayMs: 500
+    }).as("fetchCards");
 
     cy.visit("/");
+    cy.get(".loader").should("exist");
+    cy.wait("@fetchCards");
+    cy.get(".loader").should("not.exist");
   });
 
   it("Renders a header", () => {

@@ -7,11 +7,15 @@ describe("Search page", () => {
         "https://api.pokemontcg.io/v1/cards?name=Pikachu&pageSize=1000&supertype=Pokémon"
       ),
       {
+        delayMs: 500,
         fixture: "cards/pikachuList.json"
       }
-    );
+    ).as("fetchCards");
 
     cy.visit("/search?searchTerm=Pikachu");
+    cy.get(".loader").should("exist");
+    cy.wait("@fetchCards");
+    cy.get(".loader").should("not.exist");
   });
 
   it("Renders a header", () => {

@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <grid-carousel>
-      <card
-        v-for="card in cards"
-        :key="card.id"
-        :buttonText="$t('details')"
-        :imageUrl="card.imageUrl"
-        :name="card.name"
-        :number="card.number"
-        :types="card.types"
-        @on-click="redirectToCardDetailsPage(card.id)"
-        class="grid-carousel--item"
-      />
-    </grid-carousel>
+  <div class="search-page">
+    <transition name="fade" mode="out-in">
+      <loader v-if="loading" />
+      <grid-carousel class="search-page__carousel" v-else>
+        <card
+          v-for="card in cards"
+          :key="card.id"
+          :buttonText="$t('details')"
+          :imageUrl="card.imageUrl"
+          :name="card.name"
+          :number="card.number"
+          :types="card.types"
+          @on-click="redirectToCardDetailsPage(card.id)"
+          class="grid-carousel--item"
+        />
+      </grid-carousel>
+    </transition>
   </div>
 </template>
 
@@ -24,11 +27,13 @@ import Cards from "@/store/cards";
 
 import Card from "@/components/Card.vue";
 import GridCarousel from "@/components/GridCarousel.vue";
+import Loader from "@/components/Loader.vue";
 
 @Component({
   components: {
     Card,
-    GridCarousel
+    GridCarousel,
+    Loader
   }
 })
 export default class Home extends Vue {
@@ -69,3 +74,16 @@ export default class Home extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.search-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+
+  &__carousel {
+    width: 100%;
+  }
+}
+</style>
