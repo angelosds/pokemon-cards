@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal.vue renders the component 1`] = `
-<section class="modal"><span class="modal__title">Modal</span>
-  <div class="modal__content"></div>
-  <div class="modal__footer"><button type="button" class="primary-button modal__button">close</button></div>
-</section>
+<div class="modal">
+  <section class="modal__container">
+    <h2 class="modal__title">Modal</h2>
+    <div class="modal__content"></div>
+    <div class="modal__footer"><button type="button" class="primary-button modal__button modal__button--close">close</button></div>
+  </section>
+</div>
 `;
