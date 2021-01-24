@@ -1,0 +1,19 @@
+<template>
+  <div class="loader"></div>
+</template>
+
+<style lang="scss" scoped>
+$border-size: 12px;
+$loader-size: 120px;
+
+.loader {
+  animation: 1s spin ease-out infinite;
+  border-bottom: $border-size solid $primary-color;
+  border-left: $border-size solid $primary-color;
+  border-radius: $loader-size;
+  border-right: $border-size solid $primary-color;
+  border-top: $border-size solid $secondary-color;
+  height: $loader-size;
+  width: $loader-size;
+}
+</style>
