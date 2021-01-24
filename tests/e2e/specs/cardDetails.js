@@ -72,4 +72,10 @@ describe("Card details", () => {
 
     cy.get(".modal").should("not.exist");
   });
+
+  it("Redirects back to home", () => {
+    cy.get(".main-header__title").click();
+
+    cy.location("pathname").should("eq", "/");
+  });
 });

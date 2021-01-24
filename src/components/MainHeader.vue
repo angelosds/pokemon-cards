@@ -1,9 +1,9 @@
 <template>
   <header class="main-header">
     <div class="main-header__content">
-      <span class="main-header__title">
+      <router-link class="main-header__title" :to="homeRedirectObject">
         <slot />
-      </span>
+      </router-link>
 
       <button class="main-header__button" type="button" @click="onSearchClick">
         <svg
@@ -47,6 +47,10 @@ export default class MainHeader extends Vue {
 
   private isSearchActive = false;
   private searchText = "";
+
+  get homeRedirectObject() {
+    return { name: "Home" };
+  }
 
   private onCloseClick() {
     this.isSearchActive = false;
@@ -132,6 +136,8 @@ export default class MainHeader extends Vue {
     font-size: 2.2rem;
     font-weight: 700;
     justify-self: center;
+    text-decoration: none;
+    color: $text-color;
   }
 
   &__search {
