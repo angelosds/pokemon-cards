@@ -9,9 +9,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { getModule } from "vuex-module-decorators";
-
-import Cards from "@/store/cards";
 
 import MainHeader from "@/components/MainHeader.vue";
 
@@ -21,10 +18,11 @@ import MainHeader from "@/components/MainHeader.vue";
   }
 })
 export default class App extends Vue {
-  private cardsModule = getModule(Cards);
-
-  onSearch(serachTerm: string) {
-    this.cardsModule.fetchCardsByName(serachTerm);
+  onSearch(searchTerm: string) {
+    this.$router.push({
+      name: "Search",
+      query: { searchTerm }
+    });
   }
 }
 </script>
