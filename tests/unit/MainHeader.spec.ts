@@ -6,7 +6,8 @@ describe("MainHeader.vue", () => {
   const build = (propsData?: object, slots?: object) => {
     const wrapper = shallowMount(MainHeader, {
       slots: { ...slots },
-      propsData: { ...propsData }
+      propsData: { ...propsData },
+      stubs: ["router-link"]
     });
 
     const closeButton = () => wrapper.find(".main-header__close");
