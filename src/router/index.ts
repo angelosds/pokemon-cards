@@ -16,6 +16,12 @@ const routes: Array<RouteConfig> = [
     name: "CardDetails",
     component: () =>
       import(/* webpackChunkName: "card-details" */ "../views/CardDetails.vue")
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: () =>
+      import(/* webpackChunkName: "search" */ "../views/Search.vue")
   }
 ];
 

@@ -10,12 +10,14 @@ export interface CardState {
   card: Card;
   cards: Array<Card>;
   loading: boolean;
+  searchCards: Array<Card>;
 }
 
 @Module({ dynamic: true, store, name: "user" })
 export default class Cards extends VuexModule implements CardState {
   public card: Card = {} as Card;
   public cards: Array<Card> = [];
+  public searchCards: Array<Card> = [];
   public loading = false;
 
   @Mutation
@@ -26,6 +28,11 @@ export default class Cards extends VuexModule implements CardState {
   @Mutation
   private SET_CARDS(cards: Array<Card>) {
     this.cards = cards;
+  }
+
+  @Mutation
+  private SET_SEARCH_CARDS(cards: Array<Card>) {
+    this.searchCards = cards;
   }
 
   @Mutation
@@ -57,7 +64,7 @@ export default class Cards extends VuexModule implements CardState {
         params: { name, pageSize: 1000, supertype: "Pokémon" }
       });
 
-      this.SET_CARDS(data.cards.sort(sortCards));
+      this.SET_SEARCH_CARDS(data.cards.sort(sortCards));
     } finally {
       this.SET_LOADING(false);
     }
