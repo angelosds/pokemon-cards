@@ -8,7 +8,7 @@
 
       <div class="modal__footer">
         <primary-button
-          class="modal__button"
+          class="modal__button modal__button--close"
           type="button"
           @on-click="onClose"
           >{{ $t("close") }}</primary-button

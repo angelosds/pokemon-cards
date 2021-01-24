@@ -5,5 +5,7 @@
   "resistance": "Resistência",
   "weakness": "Fraqueza",
   "attacks": "Ataques",
-  "close": "Fechar"
+  "close": "Fechar",
+  "cost": "Custo",
+  "damage": "Dano"
 }

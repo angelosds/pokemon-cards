@@ -1,68 +1,97 @@
 <template>
-  <article class="card-details">
-    <template v-if="card">
-      <img
-        class="card-details__image"
-        :src="card.imageUrlHiRes"
-        :alt="card.name"
-      />
+  <div>
+    <modal
+      v-if="isModalActive"
+      :title="selectedAttack.name"
+      @on-close="onModalClose"
+    >
+      <p
+        class="card-details__text card-details__text--modal card-details__text--cost"
+      >
+        <strong>{{ $t("cost") }}:</strong> {{ selectedAttackCost }}
+      </p>
+      <p
+        class="card-details__text card-details__text--modal card-details__text--damage"
+        v-if="selectedAttack.damage"
+      >
+        <strong>{{ $t("damage") }}:</strong> {{ selectedAttack.damage }}
+      </p>
+      <p
+        class="card-details__text card-details__text--modal card-details__text--description"
+        v-if="selectedAttack.text"
+      >
+        {{ selectedAttack.text }}
+      </p>
+    </modal>
 
-      <article class="card-details__details">
-        <header class="card-details__header">
-          <h1 class="card-details__name">{{ card.name }}</h1>
-          <span class="card-details__number">#{{ card.number }}</span>
-        </header>
+    <article class="card-details">
+      <template v-if="card">
+        <img
+          class="card-details__image"
+          :src="card.imageUrlHiRes"
+          :alt="card.name"
+        />
 
-        <div>
-          <ul class="card-details__list" v-if="card.types">
-            <li
-              class="card-details__item"
-              v-for="type in card.types"
-              :key="type"
-            >
-              <badge class="card-details__type" :color="type">{{ type }}</badge>
-            </li>
-          </ul>
-        </div>
+        <article class="card-details__details">
+          <header class="card-details__header">
+            <h1 class="card-details__name">{{ card.name }}</h1>
+            <span class="card-details__number">#{{ card.number }}</span>
+          </header>
 
-        <div
-          class="card-details__stats"
-          v-if="card.resistances || card.weaknesses"
-        >
-          <div v-if="card.resistances">
-            <h2 class="card-details__subtitle">{{ $t("resistance") }}</h2>
-            <p class="card-details__text card-details__text--resistance">
-              {{ cardResistances }}
-            </p>
-          </div>
-          <div v-if="card.weaknesses">
-            <h2 class="card-details__subtitle">{{ $t("weakness") }}</h2>
-            <p class="card-details__text card-details__text--weakness">
-              {{ cardWeaknesses }}
-            </p>
-          </div>
-        </div>
-
-        <div v-if="card.attacks">
-          <h2 class="card-details__subtitle">{{ $t("attacks") }}</h2>
-          <ul class="card-details__list" v-if="card.attacks">
-            <li
-              class="card-details__item"
-              v-for="attack in card.attacks"
-              :key="attack.name"
-            >
-              <button
-                type="button"
-                class="card-details__button card-details__button--atack"
+          <div>
+            <ul class="card-details__list" v-if="card.types">
+              <li
+                class="card-details__item"
+                v-for="type in card.types"
+                :key="type"
               >
-                {{ attack.name }}
-              </button>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </template>
-  </article>
+                <badge class="card-details__type" :color="type">{{
+                  type
+                }}</badge>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-details__stats"
+            v-if="card.resistances || card.weaknesses"
+          >
+            <div v-if="card.resistances">
+              <h2 class="card-details__subtitle">{{ $t("resistance") }}</h2>
+              <p class="card-details__text card-details__text--resistance">
+                {{ cardResistances }}
+              </p>
+            </div>
+            <div v-if="card.weaknesses">
+              <h2 class="card-details__subtitle">{{ $t("weakness") }}</h2>
+              <p class="card-details__text card-details__text--weakness">
+                {{ cardWeaknesses }}
+              </p>
+            </div>
+          </div>
+
+          <div v-if="card.attacks">
+            <h2 class="card-details__subtitle">{{ $t("attacks") }}</h2>
+            <ul class="card-details__list" v-if="card.attacks">
+              <li
+                class="card-details__item"
+                v-for="attack in card.attacks"
+                :key="attack.name"
+              >
+                <button
+                  type="button"
+                  class="card-details__button card-details__button--atack"
+                  @click="onAttackClick(attack)"
+                >
+                  {{ attack.name }}
+                </button>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </template>
+    </article>
+  </div>
 </template>
 
 <script lang="ts">
@@ -75,14 +104,25 @@ import Resistance from "@/models/resistance";
 import Weakness from "@/models/weakness";
 
 import Badge from "@/components/Badge.vue";
+import Modal from "@/components/Modal.vue";
+import Attack from "@/models/attack";
+
+type reduceAttack = {
+  name: string;
+  total: number;
+};
 
 @Component({
   components: {
-    Badge
+    Badge,
+    Modal
   }
 })
 export default class Home extends Vue {
   private cardsModule = getModule(Cards);
+
+  private isModalActive = false;
+  private selectedAttack = {} as Attack;
 
   private mapResistancesAndWeaknesses(items: Array<Resistance | Weakness>) {
     return items.map(item => `${item.type} ${item.value}`).join(" | ");
@@ -104,10 +144,42 @@ export default class Home extends Vue {
     return this.mapResistancesAndWeaknesses(this.card.weaknesses);
   }
 
+  get selectedAttackCost() {
+    return this.selectedAttack.cost
+      .reduce((costs: Array<reduceAttack>, cost: string) => {
+        const currentCost = costs.find(
+          (item: reduceAttack) => item.name === cost
+        );
+
+        if (currentCost) {
+          currentCost.total++;
+          return costs;
+        }
+
+        const newCost = {
+          name: cost,
+          total: 1
+        } as reduceAttack;
+
+        return [...costs, newCost];
+      }, [])
+      .map(cost => `${cost.name} ×${cost.total}`)
+      .join(" | ");
+  }
+
   mounted() {
     const { id } = this.$route.params;
 
     this.cardsModule.fetchCardDetails(id);
+  }
+
+  onAttackClick(attack: Attack) {
+    this.selectedAttack = attack;
+    this.isModalActive = true;
+  }
+
+  onModalClose() {
+    this.isModalActive = false;
   }
 }
 </script>
@@ -202,6 +274,10 @@ export default class Home extends Vue {
 
   &__text {
     margin: 0;
+
+    &--modal:not(:last-child) {
+      margin-bottom: 8px;
+    }
   }
 }
 </style>
