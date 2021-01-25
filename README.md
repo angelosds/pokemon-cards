@@ -1,4 +1,7 @@
-# pokemon-cards
+# Pokémon cards
+A Pokémon TCG cards list app.
+
+Live demo: <https://gallant-allen-e8c5ea.netlify.app/>
 
 ## Project setup
 ```
