@@ -11,11 +11,12 @@ describe("MainHeader.vue", () => {
     });
 
     const closeButton = () => wrapper.find(".main-header__close");
-    const searchButton = () => wrapper.find(".main-header__button");
+    const searchButton = () => wrapper.find(".main-header__button--open");
+    const search = () => wrapper.find(".main-header__search");
     const searchInput = () => wrapper.find(".main-header__input");
     const title = () => wrapper.find(".main-header__title");
 
-    return { closeButton, searchButton, searchInput, title, wrapper };
+    return { closeButton, searchButton, search, searchInput, title, wrapper };
   };
 
   it("renders the component", () => {
@@ -32,33 +33,57 @@ describe("MainHeader.vue", () => {
   });
 
   it("does not shows search input by default", () => {
-    const { searchInput } = build();
+    const { search } = build();
 
-    expect(searchInput().exists()).toBe(false);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBe(-1);
   });
 
   it("shows search input when click on search button", async () => {
-    const { searchButton, searchInput } = build();
+    const { searchButton, search } = build();
 
-    expect(searchInput().exists()).toBe(false);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBe(-1);
 
     await searchButton().trigger("click");
 
-    expect(searchInput().exists()).toBe(true);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBeGreaterThanOrEqual(0);
   });
 
   it("hides search input when click on close button", async () => {
-    const { closeButton, searchButton, searchInput } = build();
+    const { closeButton, searchButton, search } = build();
 
-    expect(searchInput().exists()).toBe(false);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBe(-1);
 
     await searchButton().trigger("click");
 
-    expect(searchInput().exists()).toBe(true);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBeGreaterThanOrEqual(0);
 
     await closeButton().trigger("click");
 
-    expect(searchInput().exists()).toBe(false);
+    expect(
+      search()
+        .classes()
+        .indexOf("main-header__search--active")
+    ).toBe(-1);
   });
 
   it("renders a input placeholder", async () => {
@@ -74,6 +99,17 @@ describe("MainHeader.vue", () => {
 
   it("does not emits on-search when submit an empty form", async () => {
     const pokemonName = "";
+    const { searchButton, searchInput, wrapper } = build();
+
+    await searchButton().trigger("click");
+    await searchInput().setValue(pokemonName);
+    await wrapper.find("form").trigger("submit");
+
+    expect(wrapper.emitted("on-search")).toBeFalsy();
+  });
+
+  it("does not emits on-search when submit a input is smaller then 3 characters", async () => {
+    const pokemonName = "ab";
     const { searchButton, searchInput, wrapper } = build();
 
     await searchButton().trigger("click");

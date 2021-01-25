@@ -43,7 +43,6 @@ describe("Home page", () => {
   });
 
   it("Redirects to search page", () => {
-    cy.get(".main-header__button").click();
     cy.get(".main-header__input").type("Squirtle{enter}");
 
     cy.location("search").should("eq", "?searchTerm=Squirtle");

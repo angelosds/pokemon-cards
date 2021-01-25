@@ -5,34 +5,35 @@
         <slot />
       </router-link>
 
-      <button class="main-header__button" type="button" @click="onSearchClick">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="main-header__icon"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
+      <button
+        class="main-header__button main-header__button--open"
+        type="button"
+        @click="onSearchClick"
+      >
+        <search-icon />
       </button>
     </div>
 
-    <div class="main-header__search" v-if="isSearchActive">
+    <div class="main-header__search" :class="searchClasses">
       <button class="main-header__close" type="button" @click="onCloseClick">
         &times;
       </button>
 
-      <form @submit.prevent="onSubmit">
+      <form class="main-header__form" @submit.prevent="onSubmit">
         <input
           type="search"
           class="main-header__input"
           :placeholder="placeholder"
           v-model="searchText"
         />
+
+        <button
+          class="main-header__button main-header__button--submit"
+          type="submit"
+          @click="onSearchClick"
+        >
+          <search-icon />
+        </button>
       </form>
     </div>
   </header>
@@ -41,7 +42,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
+import SearchIcon from "@/icons/search.vue";
+
+@Component({
+  components: {
+    SearchIcon
+  }
+})
 export default class MainHeader extends Vue {
   @Prop() private readonly placeholder?: string;
 
@@ -50,6 +57,10 @@ export default class MainHeader extends Vue {
 
   get homeRedirectObject() {
     return { name: "Home" };
+  }
+
+  get searchClasses() {
+    return { "main-header__search--active": this.isSearchActive };
   }
 
   private onCloseClick() {
@@ -65,7 +76,7 @@ export default class MainHeader extends Vue {
 
     this.isSearchActive = !searchText.trim();
 
-    if (searchText.trim()) {
+    if (searchText.trim() && searchText.trim().length >= 3) {
       this.searchText = "";
       this.$emit("on-search", searchText);
     }
@@ -80,6 +91,12 @@ export default class MainHeader extends Vue {
   padding: 0 16px;
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
 
   &__button,
   &__close {
@@ -101,9 +118,29 @@ export default class MainHeader extends Vue {
     }
   }
 
+  &__button {
+    &--open {
+      @media screen and (min-width: $breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    &--submit {
+      display: none;
+
+      @media screen and (min-width: $breakpoint-tablet) {
+        display: block;
+      }
+    }
+  }
+
   &__close {
     font-size: 32px;
     justify-self: end;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      display: none;
+    }
   }
 
   &__content {
@@ -113,6 +150,19 @@ export default class MainHeader extends Vue {
     grid-template-columns: 1fr 40px;
     justify-content: center;
     width: 100%;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      justify-content: flex-start;
+    }
+  }
+
+  &__form {
+    @media screen and (min-width: $breakpoint-tablet) {
+      display: grid;
+      grid-gap: 16px;
+      grid-template-columns: 1fr 40px;
+    }
   }
 
   &__icon {
@@ -130,6 +180,13 @@ export default class MainHeader extends Vue {
     outline: 0;
     padding: 4px;
     width: 100%;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      border-bottom: 0;
+      background-color: $background-color;
+      border-radius: 8px;
+      padding: 4px 16px;
+    }
   }
 
   &__title {
@@ -142,7 +199,7 @@ export default class MainHeader extends Vue {
 
   &__search {
     background-color: $search-background-color;
-    display: grid;
+    display: none;
     grid-gap: 16px;
     grid-template-rows: 40px 1fr;
     height: 100vh;
@@ -151,6 +208,18 @@ export default class MainHeader extends Vue {
     position: fixed;
     top: 0;
     width: 100vw;
+
+    &--active {
+      display: grid;
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      display: grid;
+      position: relative;
+      height: auto;
+      width: auto;
+      grid-template-rows: 1fr;
+    }
   }
 }
 </style>
