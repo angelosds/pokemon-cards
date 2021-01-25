@@ -8,5 +8,11 @@
   "close": "Close",
   "cost": "Cost",
   "damage": "Damage",
-  "emptySearchMessage": "No cards found for: {searchTerm}"
+  "emptySearchMessage": "No cards found for: {searchTerm}",
+  "chanageLanguage": "Change language to {language}",
+  "languages": {
+    "en": "English",
+    "pt": "Portuguese"
+  },
+  "footerText": "Made with {link}."
 }

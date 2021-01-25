@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainFooter.vue renders the component 1`] = `
+<footer class="main-footer"><span class="main-footer__text"></span> <button type="button" class="main-footer__button">
+    button
+  </button></footer>
+`;

@@ -8,25 +8,53 @@
         <router-view class="content__child" :key="$route.name" />
       </transition>
     </main>
+    <main-footer :actionText="actionText" @on-click="changeLocale">
+      <span v-html="apiLinkString"></span>
+    </main-footer>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
+import MainFooter from "@/components/MainFooter.vue";
 import MainHeader from "@/components/MainHeader.vue";
 
 @Component({
   components: {
+    MainFooter,
     MainHeader
   }
 })
 export default class App extends Vue {
+  get otherLocale() {
+    if (this.$i18n.locale === "pt") {
+      return "en";
+    }
+
+    return "pt";
+  }
+
+  get actionText() {
+    return this.$t("chanageLanguage", {
+      language: this.$t(`languages.${this.otherLocale}`)
+    });
+  }
+
+  get apiLinkString() {
+    const linkString = `<a href="https://pokemontcg.io/" target="_blank">https://pokemontcg.io/</a>`;
+    return this.$t("footerText", { link: linkString });
+  }
+
   onSearch(searchTerm: string) {
     this.$router.push({
       name: "Search",
       query: { searchTerm }
     });
+  }
+
+  changeLocale() {
+    this.$i18n.locale = this.otherLocale;
   }
 }
 </script>
@@ -34,7 +62,9 @@ export default class App extends Vue {
 <style lang="scss">
 @import "./style/global";
 
-$page-min-height: calc(100vh - 80px);
+$footer-height: 70px;
+$header-height: 80px;
+$page-min-height: calc(100vh - #{$header-height} - #{$footer-height});
 
 .content {
   align-items: flex-start;

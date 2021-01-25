@@ -8,5 +8,11 @@
   "close": "Fechar",
   "cost": "Custo",
   "damage": "Dano",
-  "emptySearchMessage": "Nenhum card encontrado para: {searchTerm}"
+  "emptySearchMessage": "Nenhum card encontrado para: {searchTerm}",
+  "chanageLanguage": "Alterar idioma para {language}",
+  "languages": {
+    "en": "Inglês",
+    "pt": "Português"
+  },
+  "footerText": "Feito com {link}."
 }

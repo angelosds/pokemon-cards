@@ -62,5 +62,9 @@ body {
   padding: 0;
 }
 
+a {
+  color: $text-color;
+}
+
 @import './animations';
 @import './transitions';
