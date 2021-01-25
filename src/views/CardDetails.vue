@@ -1,28 +1,30 @@
 <template>
   <div>
-    <modal
-      v-if="isModalActive"
-      :title="selectedAttack.name"
-      @on-close="onModalClose"
-    >
-      <p
-        class="card-details__text card-details__text--modal card-details__text--cost"
+    <transition name="fade" mode="out-in">
+      <modal
+        v-if="isModalActive"
+        :title="selectedAttack.name"
+        @on-close="onModalClose"
       >
-        <strong>{{ $t("cost") }}:</strong> {{ selectedAttackCost }}
-      </p>
-      <p
-        class="card-details__text card-details__text--modal card-details__text--damage"
-        v-if="selectedAttack.damage"
-      >
-        <strong>{{ $t("damage") }}:</strong> {{ selectedAttack.damage }}
-      </p>
-      <p
-        class="card-details__text card-details__text--modal card-details__text--description"
-        v-if="selectedAttack.text"
-      >
-        {{ selectedAttack.text }}
-      </p>
-    </modal>
+        <p
+          class="card-details__text card-details__text--modal card-details__text--cost"
+        >
+          <strong>{{ $t("cost") }}:</strong> {{ selectedAttackCost }}
+        </p>
+        <p
+          class="card-details__text card-details__text--modal card-details__text--damage"
+          v-if="selectedAttack.damage"
+        >
+          <strong>{{ $t("damage") }}:</strong> {{ selectedAttack.damage }}
+        </p>
+        <p
+          class="card-details__text card-details__text--modal card-details__text--description"
+          v-if="selectedAttack.text"
+        >
+          {{ selectedAttack.text }}
+        </p>
+      </modal>
+    </transition>
 
     <article class="card-details">
       <template v-if="card">
