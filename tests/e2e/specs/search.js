@@ -40,4 +40,18 @@ describe("Search page", () => {
 
     cy.location("pathname").should("eq", "/card/swshp-SWSH020");
   });
+
+  it("Shows a 'no cards found' message", () => {
+    cy.intercept(
+      encodeURI(
+        "https://api.pokemontcg.io/v1/cards?name=Test&pageSize=1000&supertype=Pokémon"
+      ),
+      {
+        fixture: "cards/empty.json"
+      }
+    );
+
+    cy.visit("/search?searchTerm=Test");
+    cy.get(".search-page__empty").should("exist");
+  });
 });

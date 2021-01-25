@@ -7,5 +7,6 @@
   "attacks": "Ataques",
   "close": "Fechar",
   "cost": "Custo",
-  "damage": "Dano"
+  "damage": "Dano",
+  "emptySearchMessage": "Nenhum card encontrado para: {searchTerm}"
 }

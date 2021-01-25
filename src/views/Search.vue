@@ -2,7 +2,7 @@
   <div class="search-page">
     <transition name="fade" mode="out-in">
       <loader v-if="loading" />
-      <grid-carousel class="search-page__carousel" v-else>
+      <grid-carousel class="search-page__carousel" v-else-if="cards.length > 0">
         <card
           v-for="card in cards"
           :key="card.id"
@@ -15,6 +15,9 @@
           class="grid-carousel--item"
         />
       </grid-carousel>
+      <p class="search-page__empty">
+        {{ $t("emptySearchMessage", { searchTerm }) }}
+      </p>
     </transition>
   </div>
 </template>
