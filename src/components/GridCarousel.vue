@@ -12,6 +12,7 @@
   overflow-x: auto;
   padding: 24px;
   scroll-snap-type: x mandatory;
+  width: 100%;
 
   > .grid-carousel--item {
     min-width: calc(100vw - 80px);

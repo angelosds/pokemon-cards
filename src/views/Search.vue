@@ -51,7 +51,7 @@ export default class Home extends Vue {
     return this.$route.query.searchTerm;
   }
 
-  mounted() {
+  beforeMount() {
     this.fetchCards();
   }
 
@@ -74,16 +74,3 @@ export default class Home extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.search-page {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: calc(100vh - 80px);
-
-  &__carousel {
-    width: 100%;
-  }
-}
-</style>

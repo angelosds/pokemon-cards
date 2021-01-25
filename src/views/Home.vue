@@ -63,16 +63,3 @@ export default class Home extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.home-page {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: calc(100vh - 80px);
-
-  &__carousel {
-    width: 100%;
-  }
-}
-</style>

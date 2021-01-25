@@ -3,9 +3,11 @@
     <MainHeader :placeholder="$t('searchPlaceholder')" @on-search="onSearch">{{
       $t("appTitle")
     }}</MainHeader>
-    <transition name="fade" mode="out-in">
-      <router-view :key="$route.name" />
-    </transition>
+    <main class="content">
+      <transition name="fade" mode="out-in">
+        <router-view class="content__child" :key="$route.name" />
+      </transition>
+    </main>
   </div>
 </template>
 
@@ -31,4 +33,25 @@ export default class App extends Vue {
 
 <style lang="scss">
 @import "./style/global";
+
+$page-min-height: calc(100vh - 80px);
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  min-height: $page-min-height;
+
+  &__child {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: $page-min-height;
+
+    > .loader {
+      min-height: $page-min-height;
+    }
+  }
+}
 </style>
