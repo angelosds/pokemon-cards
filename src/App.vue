@@ -3,7 +3,9 @@
     <MainHeader :placeholder="$t('searchPlaceholder')" @on-search="onSearch">{{
       $t("appTitle")
     }}</MainHeader>
-    <router-view />
+    <transition name="fade" mode="out-in">
+      <router-view :key="$route.name" />
+    </transition>
   </div>
 </template>
 
