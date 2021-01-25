@@ -14,5 +14,18 @@
     "en": "English",
     "pt": "Portuguese"
   },
-  "footerText": "Made with {link}."
+  "footerText": "Made with {link}.",
+  "cardTypes": {
+    "Darkness": "Darkness",
+    "Colorless": "Colorless",
+    "Dragon": "Dragon",
+    "Fairy": "Fairy",
+    "Fighting": "Fighting",
+    "Fire": "Fire",
+    "Grass": "Grass",
+    "Lightning": "Lightning",
+    "Metal": "Metal",
+    "Psychic": "Psychic",
+    "Water": "Water"
+  }
 }

@@ -10,7 +10,9 @@
 
       <ul class="card__types" v-if="types">
         <li class="card__item" v-for="type in types" :key="type">
-          <badge class="card__type" :color="type">{{ type }}</badge>
+          <badge class="card__type" :color="type">{{
+            $t(`cardTypes.${type}`)
+          }}</badge>
         </li>
       </ul>
 

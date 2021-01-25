@@ -31,12 +31,12 @@ describe("Card details", () => {
   it("Renders pokémon resistances", () => {
     cy.get(".card-details__text--resistance").should(
       "contain.text",
-      "Grass -30"
+      "Grama -30"
     );
   });
 
   it("Renders pokémon weaknesses", () => {
-    cy.get(".card-details__text--weakness").should("contain.text", "Fire ×2");
+    cy.get(".card-details__text--weakness").should("contain.text", "Fogo ×2");
   });
 
   it("Renders pokémon's attacks", () => {
@@ -58,7 +58,7 @@ describe("Card details", () => {
     cy.get(".modal__title").should("contain.text", "Sonic Edge");
     cy.get(".card-details__text--cost").should(
       "contain.text",
-      "Metal ×2 | Colorless ×1"
+      "Metal ×2 | Incolor ×1"
     );
     cy.get(".card-details__text--damage").should("contain.text", "130");
     cy.get(".card-details__text--description").should(

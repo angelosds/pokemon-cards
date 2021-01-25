@@ -51,7 +51,7 @@
                     :key="type"
                   >
                     <badge class="card-details__type" :color="type">{{
-                      type
+                      $t(`cardTypes.${type}`)
                     }}</badge>
                   </li>
                 </ul>
@@ -134,7 +134,9 @@ export default class Home extends Vue {
   private selectedAttack = {} as Attack;
 
   private mapResistancesAndWeaknesses(items: Array<Resistance | Weakness>) {
-    return items.map(item => `${item.type} ${item.value}`).join(" | ");
+    return items
+      .map(item => `${this.$t(`cardTypes.${item.type}`)} ${item.value}`)
+      .join(" | ");
   }
 
   get card() {
@@ -172,7 +174,7 @@ export default class Home extends Vue {
 
         return [...costs, newCost];
       }, [])
-      .map(cost => `${cost.name} ×${cost.total}`)
+      .map(cost => `${this.$t(`cardTypes.${cost.name}`)} ×${cost.total}`)
       .join(" | ");
   }
 

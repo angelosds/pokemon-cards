@@ -6,7 +6,10 @@ import PokemonType from "@/enums/pokemonType";
 describe("Card.vue", () => {
   const build = (propsData?: object) => {
     const wrapper = mount(Card, {
-      propsData: { buttonText: "Details", name: "Pokémon name", ...propsData }
+      propsData: { buttonText: "Details", name: "Pokémon name", ...propsData },
+      mocks: {
+        $t: (text: string) => text
+      }
     });
 
     const button = () => wrapper.find(".card__button");

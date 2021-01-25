@@ -14,5 +14,18 @@
     "en": "Inglês",
     "pt": "Português"
   },
-  "footerText": "Feito com {link}."
+  "footerText": "Feito com {link}.",
+  "cardTypes": {
+    "Darkness": "Escuridão",
+    "Colorless": "Incolor",
+    "Dragon": "Dragão",
+    "Fairy": "Fada",
+    "Fighting": "Lutador",
+    "Fire": "Fogo",
+    "Grass": "Grama",
+    "Lightning": "Relâmpago",
+    "Metal": "Metal",
+    "Psychic": "Psíquico",
+    "Water": "Água"
+  }
 }
